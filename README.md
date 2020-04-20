@@ -1,4 +1,4 @@
-# Setu
+# setu
 Viral Genome Assembler
 
 # Setting
