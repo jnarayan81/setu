@@ -1,7 +1,13 @@
 # setu
 CoViD Genome Assembler
 Setu (sanskrit सेतु) means bridge. It bridges all the reads to genome.
-
+```
+______ _____/  |_ __ __ 
+ /  ___// __ \   __\  |  \
+ \___ \\  ___/|  | |  |  /
+/____  >\___  >__| |____/ v0.1
+     \/     \/ bridging the CoViD genome 
+```
 # Setting
 ```
  conda create -c conda-forge -c bioconda -n setu snakemake
