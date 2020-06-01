@@ -1,0 +1,18 @@
+#reference and target genome names (required)
+.references = corona
+.target = setu
+
+#phylogenetic tree for all genomes (optional)
+#.tree = (rf122:0.02,(((usa:0.01,col:0.01):0.01,jkd:0.04):0.005,n315:0.01):0.01);
+
+#paths to genome fasta files (required for Sibelia)
+corona.fasta = scriptBase/refGenome/corona.fa
+setu.fasta = ShastaRun/Assembly.fasta
+
+#synteny blocks scale (optional)
+#.blocks = small
+#specially fixed for covid genome
+.blocks = 99,151
+
+#reference to use for scaffold naming (optional)
+.naming_ref = corona

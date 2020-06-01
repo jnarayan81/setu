@@ -1,0 +1,16 @@
+https://www.ncbi.nlm.nih.gov/nuccore/1798174254
+REVIEWED REFSEQ: This record has been curated by NCBI staff. The
+            reference sequence is identical to MN908947.
+            On Jan 17, 2020 this sequence version replaced NC_045512.1.
+            Annotation was added using homology to SARSr-CoV NC_004718.3. ###
+            Formerly called 'Wuhan seafood market pneumonia virus.' If you have
+            questions or suggestions, please email us at info@ncbi.nlm.nih.gov
+            and include the accession number NC_045512.### Protein structures
+            can be found at
+            https://www.ncbi.nlm.nih.gov/structure/?term=sars-cov-2.### Find
+            all other Severe acute respiratory syndrome coronavirus 2
+            (SARS-CoV-2) sequences at
+            https://www.ncbi.nlm.nih.gov/genbank/sars-cov-2-seqs/
+
+Fill all covid genome at 
+https://www.ncbi.nlm.nih.gov/genbank/sars-cov-2-seqs/
