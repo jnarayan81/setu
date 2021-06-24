@@ -1,8 +1,0 @@
-- "left reads":
-  - "/home/vikas/Downloads/setu/setu/ASM_CORONA_PE/corrected/lib_JIT_mapped.1.00.0_0.cor.fastq.gz"
-  "orientation": "fr"
-  "right reads":
-  - "/home/vikas/Downloads/setu/setu/ASM_CORONA_PE/corrected/lib_JIT_mapped.2.00.0_0.cor.fastq.gz"
-  "single reads":
-  - "/home/vikas/Downloads/setu/setu/ASM_CORONA_PE/corrected/lib_JIT_mapped._unpaired.00.0_0.cor.fastq.gz"
-  "type": "paired-end"

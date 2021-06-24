@@ -1,8 +1,0 @@
-
-=== Error correction and assembling warnings:
- * 0:00:04.286     8M / 1G    WARN    General                 (kmer_coverage_model.cpp   : 327)   Valley value was estimated improperly, reset to 2
- * 0:00:03.972     8M / 1G    WARN    General                 (kmer_coverage_model.cpp   : 327)   Valley value was estimated improperly, reset to 5
- * 0:00:01.643     8M / 1G    WARN    General                 (kmer_coverage_model.cpp   : 218)   Too many erroneous kmers, the estimates might be unreliable
- * 0:00:04.892     8M / 1G    WARN    General                 (kmer_coverage_model.cpp   : 327)   Valley value was estimated improperly, reset to 4
- * 0:00:03.493     8M / 1G    WARN    General                 (kmer_coverage_model.cpp   : 327)   Valley value was estimated improperly, reset to 6
-======= Warnings saved to /home/vikas/Downloads/setu/setu/ASM_CORONA_PE/warnings.log
