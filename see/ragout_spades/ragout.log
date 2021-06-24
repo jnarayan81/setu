@@ -1,0 +1,128 @@
+[15:03:07] root: INFO: Starting Ragout v2.3
+[15:03:07] root: INFO: Running withs synteny block sizes '[99, 151]'
+[15:03:07] root: INFO: Running Sibelia with block size 99
+[15:03:07] root: INFO: Running Sibelia with block size 151
+[15:03:07] root: INFO: Inferring phylogeny from synteny blocks data
+[15:03:07] root: INFO: Reading ragout_spades/sibelia-workdir/151/blocks_coords.txt
+[15:03:07] root: INFO: "corona" synteny blocks coverage: 98.76%
+[15:03:07] root: INFO: "setu" synteny blocks coverage: 98.0%
+[15:03:07] root: DEBUG: Read 1 reference sequences
+[15:03:07] root: DEBUG: Read 11 target sequences
+[15:03:07] root: DEBUG: 2 target sequences left after indel filtering
+[15:03:07] root: DEBUG: 1 target sequences left after repeat filtering
+[15:03:07] root: DEBUG: Branch lengths: [1e-06, 1e-06], mu = 1000000.000000
+[15:03:07] root: INFO: Inferred tree: ('corona' : 1e-06, 'setu' : 1e-06)
+[15:03:07] root: INFO: Processing permutation files
+[15:03:07] root: INFO: Reading ragout_spades/sibelia-workdir/99/blocks_coords.txt
+[15:03:07] root: INFO: "corona" synteny blocks coverage: 98.69%
+[15:03:07] root: INFO: "setu" synteny blocks coverage: 91.94%
+[15:03:07] root: DEBUG: Read 1 reference sequences
+[15:03:07] root: DEBUG: Read 26 target sequences
+[15:03:07] root: DEBUG: 26 target sequences left after indel filtering
+[15:03:07] root: DEBUG: 1 target sequences left after repeat filtering
+[15:03:07] root: DEBUG: Built breakpoint graph with 34 nodes
+[15:03:07] root: INFO: Reading ragout_spades/sibelia-workdir/151/blocks_coords.txt
+[15:03:07] root: INFO: "corona" synteny blocks coverage: 98.76%
+[15:03:07] root: INFO: "setu" synteny blocks coverage: 98.0%
+[15:03:07] root: DEBUG: Read 1 reference sequences
+[15:03:07] root: DEBUG: Read 11 target sequences
+[15:03:07] root: DEBUG: 11 target sequences left after indel filtering
+[15:03:07] root: DEBUG: 1 target sequences left after repeat filtering
+[15:03:07] root: DEBUG: Built breakpoint graph with 4 nodes
+[15:03:07] root: INFO: Reading ragout_spades/sibelia-workdir/151/blocks_coords.txt
+[15:03:07] root: INFO: "corona" synteny blocks coverage: 98.76%
+[15:03:07] root: INFO: "setu" synteny blocks coverage: 98.0%
+[15:03:07] root: DEBUG: Read 1 reference sequences
+[15:03:07] root: DEBUG: Read 11 target sequences
+[15:03:07] root: DEBUG: 2 target sequences left after indel filtering
+[15:03:07] root: INFO: Resolving repeats
+[15:03:07] root: DEBUG: Unique repeat blocks: 1
+[15:03:07] root: DEBUG: Purely repetitive sequences: 1
+[15:03:07] root: DEBUG: Repetitive sequences with matches: 0
+[15:03:07] root: DEBUG: Unique matches: 1
+[15:03:07] root: DEBUG: Repetitive matches: 0
+[15:03:07] root: DEBUG: Resolved 0 unique repeat instances
+[15:03:07] root: DEBUG: Saved sequences: 0
+[15:03:07] root: DEBUG: Added 0 extra contigs
+[15:03:07] root: DEBUG: 1 target sequences left after repeat filtering
+[15:03:07] root: DEBUG: Built breakpoint graph with 4 nodes
+[15:03:07] root: INFO: Reading contigs file
+[15:03:07] root: INFO: Stage "99"
+[15:03:07] root: DEBUG: Built breakpoint graph with 34 nodes
+[15:03:07] root: INFO: Inferring missing adjacencies
+[15:03:07] root: DEBUG: Found 17 connected components
+[15:03:07] root: DEBUG: Inferred 1 adjacencies
+[15:03:07] root: DEBUG: 0 orphaned nodes
+[15:03:07] root: DEBUG: 0 guessed edges
+[15:03:07] root: DEBUG: 16 trimmed edges
+[15:03:07] root: DEBUG: Building scaffolds
+[15:03:07] root: DEBUG: 1 contigs were joined into 1 scaffolds
+[15:03:07] root: DEBUG: Target-specific adjacencies in scaffolds: 0
+[15:03:07] root: INFO: Stage "151"
+[15:03:07] root: DEBUG: Built breakpoint graph with 4 nodes
+[15:03:07] root: INFO: Inferring missing adjacencies
+[15:03:07] root: DEBUG: Found 2 connected components
+[15:03:07] root: DEBUG: Inferred 1 adjacencies
+[15:03:07] root: DEBUG: 0 orphaned nodes
+[15:03:07] root: DEBUG: 0 guessed edges
+[15:03:07] root: DEBUG: 1 trimmed edges
+[15:03:07] root: DEBUG: Building scaffolds
+[15:03:07] root: DEBUG: 1 contigs were joined into 1 scaffolds
+[15:03:07] root: INFO: Merging two iterations
+[15:03:07] root: DEBUG: Made 0 k-breaks
+[15:03:07] root: DEBUG: 1 contigs were joined into 1 scaffolds
+[15:03:07] root: DEBUG: Fail: not found: 0
+[15:03:07] root: DEBUG: Fail: different scaffolds: 0
+[15:03:07] root: DEBUG: Fail: different orientatilns: 0
+[15:03:07] root: DEBUG: Fail: inconsistent: 0
+[15:03:07] root: DEBUG: Total success: 0
+[15:03:07] root: DEBUG: Total fail: 0
+[15:03:07] root: DEBUG: Total inserted: 0
+[15:03:07] root: DEBUG: Result: 1 contigs in 1 scaffolds
+[15:03:07] root: DEBUG: Merging consequtive contigs: 1 left
+[15:03:07] root: DEBUG: Target-specific adjacencies in scaffolds: 0
+[15:03:07] root: INFO: Stage "refine"
+[15:03:07] root: DEBUG: Built breakpoint graph with 4 nodes
+[15:03:07] root: INFO: Inferring missing adjacencies
+[15:03:07] root: DEBUG: Found 2 connected components
+[15:03:07] root: DEBUG: Inferred 1 adjacencies
+[15:03:07] root: DEBUG: 0 orphaned nodes
+[15:03:07] root: DEBUG: 0 guessed edges
+[15:03:07] root: DEBUG: 1 trimmed edges
+[15:03:07] root: DEBUG: Building scaffolds
+[15:03:07] root: DEBUG: 1 contigs were joined into 1 scaffolds
+[15:03:07] root: INFO: Merging two iterations
+[15:03:07] root: DEBUG: Fail: not found: 0
+[15:03:07] root: DEBUG: Fail: different scaffolds: 0
+[15:03:07] root: DEBUG: Fail: different orientatilns: 0
+[15:03:07] root: DEBUG: Fail: inconsistent: 0
+[15:03:07] root: DEBUG: Total success: 0
+[15:03:07] root: DEBUG: Total fail: 0
+[15:03:07] root: DEBUG: Total inserted: 0
+[15:03:07] root: DEBUG: Result: 1 contigs in 1 scaffolds
+[15:03:07] root: DEBUG: Merging consequtive contigs: 1 left
+[15:03:07] root: DEBUG: Target-specific adjacencies in scaffolds: 0
+[15:03:07] root: INFO: Building assembly graph
+[15:03:07] root: INFO: Refining with assembly graph
+[15:03:07] root: DEBUG: Max path len = 30
+[15:03:07] root: WARNING: Too few overlaps (4) between contigs were detected -- refine procedure will be useless. Possible reasons:
+
+1. Some contigs output by assembler are missing
+2. Contigs overlap not on a constant value (like k-mer for assemblers which use debruijn graph)
+3. Contigs ends are trimmed/postprocessed
+
+[15:03:07] root: INFO: Generating FASTA output
+[15:03:07] root: INFO: Assembly statistics:
+
+	Scaffolds:		1
+	Used fragments:		1
+	Scaffolds length:	29903
+
+	Unplaced fragments:	38
+	Unplaced length:	9293 (23.71%)
+	Introduced Ns length:	0 (0.00%)
+
+	Fragments N50:		29903
+	Assembly N50:		29903
+
+[15:03:07] root: INFO: Done!

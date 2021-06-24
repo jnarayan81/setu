@@ -17,14 +17,39 @@ IFS=, VER=(${reads##,-})
   if [ -z "$longR" ]
   then
       echo " ${Red} $longR is NULL, please provide long reads ${Reset}"
-      kill %%
+      exit 1
   elif [ -z "$longN" ]
   then
       echo " ${Red} $longN is NULL, please provide read name: ont or pacbio ${Reset}"
-      kill %%
+      exit 1
   else
       echo " $longR used for hybrid assembly"
   fi
+
+
+#Lets check the software first
+allTools=(bwa seqtk minimap2 trimmomatic Rscript samtools bamToFastq ragout seqkit miniasm Gap2Seq kat assembly_stats megahit shasta canu odgi seqwish pear spades.py)
+decFlag=0;
+for name in ${allTools[@]}; do
+#echo "enter your package name"
+#read name
+    #echo "Checking $name"
+    #dpkg -s $name &> /dev/null
+
+    if ! [ -x "$(command -v $name)" ]; then
+                echo " $name     -- NOT installed." >&2
+                decFlag=1
+        else
+                echo    " $name     -- installed"
+    fi
+done
+
+if [[ $decFlag -ne 0 ]]
+        then
+        echo "Install all the missing sotware first"
+        exit 1
+fi
+
 
 echo "Checking the raw coverage"
   source ./scriptBase/fastqCov.sh $forR1 $revR2 ./scriptBase/refGenome/corona.fa > rawCov.stats

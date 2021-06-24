@@ -1,0 +1,31 @@
+---
+max read length: 251
+nomerge max read length: 251
+average read length: 219.237
+average coverage: 192.628
+libraries:       
+    - type:            paired-end
+      orientation:     fr
+      left reads:      
+        - /home/vikas/Downloads/setu/setu/ASM_CORONA_PE/corrected/lib_JIT_mapped.1.00.0_0.cor.fastq.gz
+      right reads:     
+        - /home/vikas/Downloads/setu/setu/ASM_CORONA_PE/corrected/lib_JIT_mapped.2.00.0_0.cor.fastq.gz
+      single reads:    
+        - /home/vikas/Downloads/setu/setu/ASM_CORONA_PE/corrected/lib_JIT_mapped._unpaired.00.0_0.cor.fastq.gz
+      data:            
+        unmerged read length: 251
+        merged read length: 0
+        insert size mean: 0
+        insert size deviation: 0
+        insert size left quantile: 0
+        insert size right quantile: 0
+        insert size median: 0
+        insert size mad: 0
+        insert size distribution: {  }
+        pi threshold:    0
+        binary converted: true
+        single reads mapped: false
+        library index:   0
+        number of reads: 34228
+        total nucleotides: 7504030
+...

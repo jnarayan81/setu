@@ -14,14 +14,39 @@ IFS=, VER=(${reads##,-})
   if [ -z "$longR" ]
   then
       echo " ${Red} $longR is NULL, please provide long reads ${Reset}"
-      kill %%
+      exit 1
   elif [ -z "$readN" ]
   then
       echo " ${Red} $readN long read name is NULL, please provide read name: ont or pacbio ${Reset}"
-      kill %%
+      exit 1
   else
       echo " $longR used for long read based assembly"
   fi
+
+
+#Lets check the software first
+allTools=(bwa seqtk minimap2 trimmomatic Rscript samtools bamToFastq ragout seqkit miniasm Gap2Seq kat assembly_stats megahit shasta canu odgi seqwish )
+decFlag=0;
+for name in ${allTools[@]}; do
+#echo "enter your package name"
+#read name
+    #echo "Checking $name"
+    #dpkg -s $name &> /dev/null
+
+    if ! [ -x "$(command -v $name)" ]; then
+                echo " $name     -- NOT installed." >&2
+                decFlag=1
+        else
+                echo    " $name     -- installed"
+    fi
+done
+
+if [[ $decFlag -ne 0 ]]
+        then
+        echo "Install all the missing sotware first"
+        exit 1
+fi
+
 
 #echo "Trimming the reads" --- expecting corrected long reads 
 #Currently not ont and pacbio flags active
@@ -69,7 +94,7 @@ echo "Plotting the coverage"
   #minimap2 -t 1 raw.assembly.overlaps.final.ont.reads.fasta self.overlaps.final.ont.reads.paf > mapping.overlaps.final.ont.reads.paf
 
 #Shasta way
-  ./scriptBase/shasta-Linux-0.1.0 --input mapped.long.fasta --conf ./scriptBase/shasta_local2.conf
+  ./scriptBase/shasta-Linux-0.7.0 --input mapped.long.fasta --conf ./scriptBase/shasta_local2.conf --memoryBacking 2M --memoryMode filesystem
 
 #Flye way  
   #flye --nano-raw mapped.long.fastq --meta --out-dir out_ont.corona --genome-size 29k --threads 1
@@ -89,8 +114,10 @@ echo "Plotting the coverage"
   cat final.hang.reads.fasta ShastaRun/Assembly.fasta > added.reads.assembly.fa
 COMMENT1
 
+cp ./scriptBase/config/recipe_file_long .
+
 echo "Re-assembly using reference"
-  ragout -s sibelia --repeats --threads $core --overwrite -o ragout_long --solid-scaffolds ./scriptBase/config/recipe_file_long
+  ragout -s sibelia --repeats --threads $core --overwrite -o ragout_long --solid-scaffolds recipe_file_long
 
   #pip install assembly_stats
   assembly_stats ragout_long/setu_scaffolds.fasta > assembly.stats

@@ -1,0 +1,36 @@
+Command line: /home/vikas/anaconda3/envs/jitENV/bin/spades.py	-t	2	--memory	33	--pe1-1	/home/vikas/Downloads/setu/setu/lib_JIT_mapped.1.fastq	--pe1-2	/home/vikas/Downloads/setu/setu/lib_JIT_mapped.2.fastq	-o	/home/vikas/Downloads/setu/setu/ASM_CORONA_PE	
+
+System information:
+  SPAdes version: 3.13.0
+  Python version: 3.7.10
+  OS: Linux-4.15.0-144-generic-x86_64-with-debian-buster-sid
+
+Output dir: /home/vikas/Downloads/setu/setu/ASM_CORONA_PE
+Mode: read error correction and assembling
+Debug mode is turned OFF
+
+Dataset parameters:
+  Multi-cell mode (you should set '--sc' flag if input data was obtained with MDA (single-cell) technology or --meta flag if processing metagenomic dataset)
+  Reads:
+    Library number: 1, library type: paired-end
+      orientation: fr
+      left reads: ['/home/vikas/Downloads/setu/setu/lib_JIT_mapped.1.fastq']
+      right reads: ['/home/vikas/Downloads/setu/setu/lib_JIT_mapped.2.fastq']
+      interlaced reads: not specified
+      single reads: not specified
+      merged reads: not specified
+Read error correction parameters:
+  Iterations: 1
+  PHRED offset will be auto-detected
+  Corrected reads will be compressed
+Assembly parameters:
+  k: automatic selection based on read length
+  Repeat resolution is enabled
+  Mismatch careful mode is turned OFF
+  MismatchCorrector will be SKIPPED
+  Coverage cutoff is turned OFF
+Other parameters:
+  Dir for temp files: /home/vikas/Downloads/setu/setu/ASM_CORONA_PE/tmp
+  Threads: 2
+  Memory limit (in Gb): 33
+

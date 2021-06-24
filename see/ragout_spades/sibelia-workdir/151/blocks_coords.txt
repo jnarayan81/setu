@@ -1,0 +1,80 @@
+Seq_id	Size	Description
+1	29903	corona.COVID19
+2	29903	setu.NODE_1_length_29903_cov_89.409491
+3	622	setu.NODE_2_length_622_cov_24.195960
+4	377	setu.NODE_3_length_377_cov_34.164000
+5	324	setu.NODE_4_length_324_cov_7.365482
+6	316	setu.NODE_5_length_316_cov_46.079365
+7	254	setu.NODE_6_length_254_cov_0.212598
+8	252	setu.NODE_7_length_252_cov_2.936000
+9	252	setu.NODE_8_length_252_cov_1.912000
+10	251	setu.NODE_9_length_251_cov_3.266129
+11	248	setu.NODE_10_length_248_cov_22.239669
+12	248	setu.NODE_11_length_248_cov_2.495868
+13	247	setu.NODE_12_length_247_cov_28.391667
+14	246	setu.NODE_13_length_246_cov_8.731092
+15	246	setu.NODE_14_length_246_cov_3.789916
+16	244	setu.NODE_15_length_244_cov_7.521368
+17	241	setu.NODE_16_length_241_cov_2.938596
+18	238	setu.NODE_17_length_238_cov_2.450450
+19	235	setu.NODE_18_length_235_cov_1.388889
+20	233	setu.NODE_19_length_233_cov_1.952830
+21	231	setu.NODE_20_length_231_cov_20.086538
+22	231	setu.NODE_21_length_231_cov_2.663462
+23	227	setu.NODE_22_length_227_cov_2.060000
+24	227	setu.NODE_23_length_227_cov_1.330000
+25	223	setu.NODE_24_length_223_cov_3.927083
+26	222	setu.NODE_25_length_222_cov_0.873684
+27	221	setu.NODE_26_length_221_cov_1.138298
+28	219	setu.NODE_27_length_219_cov_0.956522
+29	216	setu.NODE_28_length_216_cov_3.348315
+30	214	setu.NODE_29_length_214_cov_4.517241
+31	214	setu.NODE_30_length_214_cov_2.080460
+32	212	setu.NODE_31_length_212_cov_1.964706
+33	212	setu.NODE_32_length_212_cov_1.752941
+34	206	setu.NODE_33_length_206_cov_5.924051
+35	199	setu.NODE_34_length_199_cov_1.375000
+36	198	setu.NODE_35_length_198_cov_1.732394
+37	196	setu.NODE_36_length_196_cov_0.739130
+38	192	setu.NODE_37_length_192_cov_1.907692
+39	185	setu.NODE_38_length_185_cov_2.500000
+40	174	setu.NODE_39_length_174_cov_3.361702
+--------------------------------------------------------------------------------
+Block #1
+Seq_id	Strand	Start	End	Length
+13	+	27	224	198
+21	-	198	17	182
+22	+	50	231	182
+26	-	221	49	173
+--------------------------------------------------------------------------------
+Block #2
+Seq_id	Strand	Start	End	Length
+1	+	6973	7169	197
+2	-	22911	22715	197
+5	+	21	217	197
+--------------------------------------------------------------------------------
+Block #3
+Seq_id	Strand	Start	End	Length
+1	+	107	6972	6866
+2	-	29777	22912	6866
+--------------------------------------------------------------------------------
+Block #4
+Seq_id	Strand	Start	End	Length
+2	+	19	245	227
+9	-	252	66	187
+--------------------------------------------------------------------------------
+Block #5
+Seq_id	Strand	Start	End	Length
+1	-	29641	7170	22472
+2	+	246	22714	22469
+--------------------------------------------------------------------------------
+Block #6
+Seq_id	Strand	Start	End	Length
+30	+	19	192	174
+33	-	178	7	172
+--------------------------------------------------------------------------------
+Block #7
+Seq_id	Strand	Start	End	Length
+7	+	1	254	254
+19	-	223	8	216
+--------------------------------------------------------------------------------

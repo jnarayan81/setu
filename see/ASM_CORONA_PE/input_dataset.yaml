@@ -1,0 +1,6 @@
+- "left reads":
+  - "/home/vikas/Downloads/setu/setu/lib_JIT_mapped.1.fastq"
+  "orientation": "fr"
+  "right reads":
+  - "/home/vikas/Downloads/setu/setu/lib_JIT_mapped.2.fastq"
+  "type": "paired-end"

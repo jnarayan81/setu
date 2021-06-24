@@ -13,9 +13,31 @@ echo "You opted for Paired End (PE) option"
   revR2=${VER[1]}
   echo $forR1 $revR2 #forwardRead,ReverseRead -- this should be the order
 
+#Lets check the software first
+allTools=(bwa mummer trimmomatic Rscript samtools bamToFastq ragout spades.py Gap2Seq kat assembly_stats megahit)
+decFlag=0;
+for name in ${allTools[@]}; do
+#echo "enter your package name"
+#read name
+    #echo "Checking $name"
+    #dpkg -s $name &> /dev/null
+
+    if ! [ -x "$(command -v $name)" ]; then
+        	echo " $name     -- NOT installed." >&2
+         	decFlag=1
+        else
+		echo    " $name     -- installed"
+    fi
+done
+
+if [[ $decFlag -ne 0 ]]
+        then
+        echo "Install all the missing sotware first"
+        exit 1
+fi
+
 echo "Checking the raw coverage"
   source ./scriptBase/fastqCov.sh $forR1 $revR2 ./scriptBase/refGenome/corona.fa > rawCov.stats
-  
 
 #Trim the reads  
 echo "Trimming reads"
@@ -73,9 +95,11 @@ echo "Extracting reads from bam"
 
 echo "Genome assembly begun"
   spades.py -t $core --memory 33 --pe1-1 lib_JIT_mapped.1.fastq --pe1-2 lib_JIT_mapped.2.fastq -o ASM_CORONA_PE >spades.out 2>&1
-  
+
+cp ./scriptBase/config/recipe_file_pe_spades .
+
 echo "Re-assembly using reference"
-  ragout -s sibelia --refine --repeats --threads $core --overwrite -o ragout_spades --solid-scaffolds ./scriptBase/config/recipe_file_pe_spades
+  ragout -s sibelia --refine --repeats --threads $core --overwrite -o ragout_spades --solid-scaffolds recipe_file_pe_spades
 
   #Megahit assembly -- I wrote just for testing purposes -- it create more fragmented genome
   #megahit -1 lib_JIT_mapped.1.fastq  -2 lib_JIT_mapped.2.fastq  --no-mercy -t 2  --out-prefix megahit -o megahit_result
