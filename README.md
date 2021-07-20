@@ -6,7 +6,7 @@
 
 
 # setu
-a bioinformatics pipeline for quickly and efficiently assembling the SARS-CoV-2 genome
+Setu: A Pipeline for the robust Assembling of the SARS-CoV-2 Genome
 
 Setu (sanskrit सेतु) means bridge. It bridges all the reads to genome.
 ```
@@ -25,9 +25,9 @@ ______ _____/  |_ __ __
  ./setu.sh
 ```
 
-<h2>setu: a bioinformatics pipeline for quickly and efficiently assembling the SARS-CoV-2 genome</h2>
+<h2>Setu: A Pipeline for the robust Assembling of the SARS-CoV-2 Genome</h2>
 
-**setu** a bioinformatics pipeline for quickly and efficiently assembling the SARS-CoV-2 genome. It has three mode of genome assembly: 1. Paired-End 2. Hybrid 3. Long reads. 
+**setu** Setu: A Pipeline for the robust Assembling of the SARS-CoV-2 Genome. It has three mode of genome assembly: 1. Paired-End 2. Hybrid 3. Long reads. 
 
 The promise of setu:
 
@@ -41,7 +41,7 @@ Consult Jitendra Narayan at jnarayan81@gmail.com or info@bioinformaticsonline.co
 
 # Introduction
 
-Severe acute respiratory syndrome coronavirus 2 (SARS-CoV-2) is a novel human-infecting strain of Betacoronavirus. This pathogen responsible for the ongoing CoronaVirusDisease (CoViD2019) pandemic. Rapid advancement and declining costs of high throughput sequencing technologies have allowed the virus to be sequenced globally in many individuals affected. While next generation sequencing (NGS) technology offers a robust means of identifying possible pathogens from clinical specimens, easy and user-friendly bioinformatics pipelines are required to achieve a full viral genome sequence and with utmost accuracy.Towards this effort, we have written a detailed pipeline for analyzing and decoding SARS-CoV 2 sequencing data utilizing open source utilities. It involves comprehensive sequence subtraction of host- or bacteria-related NGS reads before de novo assembly, resulting in the rapid and correct assembly of metagenomic sequences of viral genomes
+The Severe Acute Respiratory Syndrome Coronavirus 2 (SARS-CoV-2) is a new Betacoronavirus strain that infects humans. This disease is the cause of the ongoing CoronaVirusDisease (CoViD2019) epidemic. Because of the rapid innovation and decreasing prices of high throughput sequencing technologies, the virus has been sequenced internationally in a large number of people who have been infected. While next-generation sequencing (NGS) technology provides a reliable method of identifying potential infections in clinical specimens, simple and user-friendly bioinformatics workflows are necessary to acquire a complete viral genome sequence with the greatest accuracy. We have developed a thorough workflow for evaluating and decoding SARS-CoV 2 sequencing data using open source technologies. It entails complete sequence elimination of host- or bacteria-related NGS reads prior to de novo assembly, resulting in the quick and accurate assembly of viral genome metagenomic sequences.
 
 # Flowchart 
 Illustrating procedures for assembly of the SARS-CoV-2 genome.
@@ -93,7 +93,7 @@ This project uses [conda](https://docs.conda.io/en/latest/) dependencies. Test r
 
 If you use setu in your research, please cite us as follows:
 
-   Jitendra Narayan¹*, Suyash Agarwal², Neha Srivastava³, Preshi Garg³, Prachi Srivastava³* **setu: a bioinformatics pipeline for quickly and efficiently assembling the SARS-CoV-2 genome** https://github.com/jnarayan81/setu, 2020. Version 0.1
+   Jitendra Narayan¹*, Suyash Agarwal², Neha Srivastava³, Prekshi Garg³, Prachi Srivastava³* **setu: a bioinformatics pipeline for quickly and efficiently assembling the SARS-CoV-2 genome** https://github.com/jnarayan81/setu, 2020. Version 0.1
 
 BibTex:
 
