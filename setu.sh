@@ -44,6 +44,9 @@ reads=${READS}
 out=${OUTDIR}
 force=${FORCE}
 
+#Set time
+start_time="$(date +%s)"
+
 #Lower case and upper case in bash var1=TesT; var2=tEst; echo ${var1,,} ${var2,,}; echo ${var1^^} ${var2^^}
 #shopt -s nocasematch
 
@@ -53,8 +56,8 @@ then
    if [[ $force == 'on' ]] ; then rm -rf mkdir $out; mkdir $out; else mkdir $out ; fi
    source ./scriptBase/pe.sh
    #Move all to OUTFILE
-   mv ASM_CORONA_PE logfile ragout_spades finished_Assembly $out
-   mv *.{bam,sam,out,fastq,stats,fq,bai,pdf,txt,cov,h5} $out
+   mv spades trimlog ragout final_output assembly_stats $out
+   mv *.{bam,sam,fastq,stats,fq,pdf,txt,cov} $out
 
 #PE end here
 elif [[ ${mode,,} == long ]]
@@ -82,5 +85,10 @@ else
   echo "Did you forgot to provide the mode info"
 fi
 
-
-echo "setu DONE ..."
+stop_time="$(expr "$(date +%s)" - $start_time)"
+echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
+echo "Setu completed successfully!"
+printf "Total runtime: %.0f hours " "$(printf "$(expr $stop_time / 3600)")"
+printf "%.0f minutes " "$(printf "$(expr $stop_time / 60 % 60)")"
+printf "%.0f seconds\n" "$(printf "$(expr $stop_time % 60)")"
+echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
