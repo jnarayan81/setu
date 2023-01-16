@@ -7,7 +7,7 @@
 
 #paths to genome fasta files (required for Sibelia)
 corona.fasta = scriptBase/refGenome/corona.fa
-setu.fasta = ASM_CORONA_PE/contigs.fasta
+setu.fasta = spades/raw_contigs.fasta
 
 #synteny blocks scale (optional)
 #.blocks = small
