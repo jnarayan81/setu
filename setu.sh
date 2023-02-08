@@ -3,7 +3,7 @@
 set -e 
 set -o pipefail
 
-echo -e "\nThis is a bash scrip to assemble CoViD19 virus in one go!"
+echo -e "\nAutomated pipeline to assemble the SARS-CoV-2 genome in one go!"
 cat ./scriptBase/logo.txt
 
 # © Jitendra Narayan 
@@ -27,7 +27,7 @@ Reset=`tput sgr0`
 source ./scriptBase/getopt.sh
 #source scriptBase/*
 
-USAGE="-k KEEP -m MODE -r READS -t THREAD -o OUTDIR -f FORCE [-a START_DATE_TIME ]"
+USAGE="-k KEEP -m MODE -r READS -t THREAD -o OUTDIR -f FORCE [-a START_DATE_TIME ]" #-s SCAFFOLD
 parse_options "${USAGE}" ${@}
 
 echo "${Green}--:LOCATIONS and FLAGS:--${Reset}"
@@ -36,6 +36,7 @@ echo "${Green}THREAD used:${Reset} ${THREAD}"
 echo "${Green}OUTDIR used:${Reset} ${OUTDIR}"
 echo "${Green}READS location :${Reset} ${READS}"
 echo "${Green}FORCE flag :${Reset} ${FORCE}"
+#echo "${Green}SCAFFOLD flag :${Reset} ${SCAFFOLD}"
 
 #Parameters accepted -- write absolute path of the BAM file
 mode=${MODE}
@@ -43,6 +44,7 @@ core=${THREAD}
 reads=${READS}
 out=${OUTDIR}
 force=${FORCE}
+#scaffold=${SCAFFOLD}
 
 #Set time
 start_time="$(date +%s)"
@@ -58,27 +60,28 @@ then
    #Move all to OUTFILE
    mv spades trimlog ragout final_output assembly_stats $out
    mv *.{bam,sam,fastq,stats,fq,pdf,txt,cov} $out
+#PE ends here
 
-#PE end here
 elif [[ ${mode,,} == long ]]
 then
-  echo "You opted for nanopore(ONT) reads"
-  if [[ $force == 'on' ]] ; then rm -rf mkdir $out; mkdir $out; else mkdir $out ; fi
-  echo "Working on long reads based assembly .. update soon"
-  source ./scriptBase/long.sh
+#  echo "You opted for nanopore(ONT) reads"
+#  if [[ $force == 'on' ]] ; then rm -rf mkdir $out; mkdir $out; else mkdir $out ; fi
+  echo "Work on long reads based assembly is ongoing"
+#  source ./scriptBase/long.sh
   #Move all to OUTFILE
-  mv ShastaRun ragout_long $out
-  mv *.{bam,sam,out,bai,fastq,stats,txt,paf,fai,fasta,fq,cov,pdf,gfa,fa,png,} $out
+#  mv ShastaRun ragout_long $out
+#  mv *.{bam,sam,out,bai,fastq,stats,txt,paf,fai,fasta,fq,cov,pdf,gfa,fa,png,} $out
 
 #long end here
-elif [[ ${mode,,} == hybrid ]]
-then
-   echo "You opted for hybrid assembly approach"
-   if [[ $force == 'on' ]] ; then rm -rf mkdir $out; mkdir $out; else mkdir $out ; fi
-   source ./scriptBase/hybrid.sh
+#elif [[ ${mode,,} == hybrid ]]
+#then
+#   echo "You opted for hybrid assembly approach"
+#   if [[ $force == 'on' ]] ; then rm -rf mkdir $out; mkdir $out; else mkdir $out ; fi
+  echo "Work on hybrid reads assembly is ongoing"
+#   source ./scriptBase/hybrid.sh
    #Move all to OUTFILE
-  mv ASM_CORONA_HYBRID ragout_spades logfile finished_Assembly $out
-   mv *.{bam,sam,out,bai,fastq,stats,txt,paf,fai,fasta,fq,cov,pdf,h5} $out
+#  mv ASM_CORONA_HYBRID ragout_spades logfile finished_Assembly $out
+#   mv *.{bam,sam,out,bai,fastq,stats,txt,paf,fai,fasta,fq,cov,pdf,h5} $out
 
 #hybrid ends here
 else
