@@ -51,7 +51,7 @@ Setu requires the following dependencies to be installed:
  ```
  Please note that there's no space after the comma when specifying reads using the `-r` flag.
  
- Assembly of single-end and hybrid-reads is currently ongoing and will be updated.
+ Assembly of long-reads and hybrid-reads is currently ongoing and will be updated.
  
  ## Testing
  You can test your installation by running:
