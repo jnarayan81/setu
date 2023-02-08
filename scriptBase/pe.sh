@@ -15,7 +15,7 @@ echo "━━━━━━━━━━━━━━━━━━━━━━━━�
   echo $forR1 $revR2 #forwardRead,ReverseRead -- this should be the order
 
 #Lets check the software first
-allTools=(bwa mummer trimmomatic Rscript samtools bedtools ragout spades.py Gap2Seq quast)
+allTools=(bwa trimmomatic Rscript samtools bedtools ragout spades.py quast)
 decFlag=0;
 for name in ${allTools[@]}; do
 #echo "enter your package name"
@@ -108,7 +108,8 @@ echo "Genome assembly begun"
 echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
   spades.py -t $core --corona -1 lib_JIT_mapped.1.fastq -2 lib_JIT_mapped.2.fastq -o spades -k 33 #>spades_log.txt 2>&1
  cp ./scriptBase/config/recipe_file_pe_spades .
-
+ rm -rf recipe_file_pe_spades
+ 
 echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
 echo "Re-assembly using reference"
 echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
@@ -118,16 +119,21 @@ echo "━━━━━━━━━━━━━━━━━━━━━━━━�
 echo "Calculating stats using QUAST"
 echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
   quast -t $core -o assembly_stats ragout/setu_scaffolds.fasta
+  
+#Fill the Gaps -- filling the N regions in scaffolded genome
+#https://www.cs.helsinki.fi/u/lmsalmel/Gap2Seq/README.txt  
+# Currently does not work due to errors.
+#if [[ $scaffold == 'yes' ]]
+#  then
+#   echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
+#   echo "Filling the gap"
+#   echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
+#    Gap2Seq -s ragout/setu_scaffolds.fasta -f ragout/setu_scaffolds.filled.fa -r lib_JIT_mapped.1.fastq,lib_JIT_mapped.2.fastq
+#fi
 
-#echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
-#echo "Filling the gap"
-#echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
-  #Fill the Gaps -- it fill up the NNNN regions in scaffolded genome
-  #https://www.cs.helsinki.fi/u/lmsalmel/Gap2Seq/README.txt
-  # Gap2Seq -s ragout/setu_scaffolds.fasta -f ragout/setu_scaffolds.filled.fa -r lib_JIT_mapped.1.fastq,lib_JIT_mapped.2.fastq
-
-  #KAT plot -- a nice kmer based plot to visualize
-  #kat comp -t 2 -o KAT_pe_v_asm $forR1 $revR2 ragout-out/spade_scaffolds.filled.fa
+#KAT plot -- a nice kmer based plot to visualize
+#Only works one read + contig file at a time.
+#kat comp -t $core -o KAT_comp/ $forR1 $revR2 ragout/setu_scaffolds.fa
 
 #echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
 #echo "Final mapping to visual check"
@@ -139,5 +145,5 @@ echo "Copying final assembly files"
 echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
   if [[ $force == 'on' ]] ; then rm -rf mkdir final_output; mkdir final_output; else mkdir final_output; fi
   cp ragout/setu_scaffolds.fasta final_output
- # cp ragout/setu_scaffolds.filled.fa final_output
   cp assembly_stats/report.tsv final_output
+ # cp ragout/setu_scaffolds.filled.fa final_output
