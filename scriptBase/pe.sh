@@ -5,7 +5,7 @@
 # sanmple assembly  https://bigd.big.ac.cn/gwh/Assembly/956/show
 
 #time ./setu.sh -k yes -m pe -t 1 -r /home/jit/Downloads/setu/sampleDATA/G1/SRR11140750_1.fastq,/home/jit/Downloads/setu/sampleDATA/G1/SRR11140750_2.fastq -f on -o see_pe
-
+(
 echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
 echo "You opted for Paired End (PE) reads option"
 echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
@@ -147,3 +147,5 @@ echo "━━━━━━━━━━━━━━━━━━━━━━━━�
   cp ragout/setu_scaffolds.fasta final_output
   cp assembly_stats/report.tsv final_output
  # cp ragout/setu_scaffolds.filled.fa final_output
+ 
+) 2>&1 | tee -a $out/log_setu.txt 
