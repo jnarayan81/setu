@@ -6,7 +6,7 @@
 
 
 # setu
-Setu: A Pipeline for the robust Assembling of the SARS-CoV-2 Genome
+Setu: A pipeline for robust assembly of the SARS-CoV-2 genome.
 
 Setu (sanskrit सेतु) means bridge. It bridges all the reads to genome.
 ```
@@ -16,14 +16,38 @@ ______ _____/  |_ __ __
 /____  >\___  >__| |____/ v0.1
      \/     \/ bridging the SARS-CoV-2 genome 
 ```
-# Setting
+## Installation
+Clone the repository using git:
 ```
- conda create -c conda-forge -c bioconda -n setu snakemake
- conda activate setu
- git clone https://github.com/jnarayan81/setu.git
- cd setu
- ./setu.sh
+git clone https://github.com/jnarayan81/setu.git
+``` 
+## Dependencies
+Required dependencies can be installed in a separate conda environment named **setu** through:
 ```
+cd setu
+conda create -f env_setu.yml
+```
+Setu requires the following dependencies to be installed:
+ - Python 3.7
+ - Trimmomatic
+ - BWA-MEM
+ - Samtools
+ - Bedtools
+ - Spades
+ - Ragout
+ - QUAST
+ - R >=3.6.0
+   - Reshape package 
+ ## Usage
+ Setu supports only paired-end Illumina reads at the moment, work on long-reads, command is as follows:
+ 
+ **Paired-end reads:**
+ ```
+ ./setu.sh -k yes -m pe -t 1 -r paired_1.fastq,paired_2.fastq -f on -o OutputDirectory
+ ```
+ Please note that there's no space after the comma when specifying reads using the `-r` flag.
+ 
+ Assembly of single-end and hybrid-reads is currently ongoing and will be updated.
 
 <h2>Setu: A Pipeline for the robust Assembling of the SARS-CoV-2 Genome</h2>
 
