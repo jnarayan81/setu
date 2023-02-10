@@ -45,7 +45,7 @@ echo "Checking the raw coverage"
 echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
 echo "Trimming reads"
 echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
-  trimmomatic PE -threads $core -trimlog trimlog $forR1 $revR2 sequence_PR1_trimmed.fq sequence_UR1_trimmed.fq sequence_PR2_trimmed.fq sequence_UR2_trimmed.fq LEADING:3 TRAILING:3 MINLEN:36 SLIDINGWINDOW:4:15
+  trimmomatic PE -threads $core -trimlog trimlog.txt $forR1 $revR2 sequence_PR1_trimmed.fq sequence_UR1_trimmed.fq sequence_PR2_trimmed.fq sequence_UR2_trimmed.fq LEADING:3 TRAILING:3 MINLEN:36 SLIDINGWINDOW:4:15
 
 echo "Plotting the read length"
   cat sequence_PR1_trimmed.fq | awk '{if(NR%4==2) print length($1)}' | sort -n | uniq -c > read_length.txt
