@@ -47,9 +47,7 @@ echo "Trimming reads"
 echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
   trimmomatic PE -threads $core -trimlog trimlog $forR1 $revR2 sequence_PR1_trimmed.fq sequence_UR1_trimmed.fq sequence_PR2_trimmed.fq sequence_UR2_trimmed.fq LEADING:3 TRAILING:3 MINLEN:36 SLIDINGWINDOW:4:15
 
-echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
 echo "Plotting the read length"
-echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
   cat sequence_PR1_trimmed.fq | awk '{if(NR%4==2) print length($1)}' | sort -n | uniq -c > read_length.txt
   Rscript ./scriptBase/plotReadLen.R read_length.txt ReadLenPlot.pdf
 
@@ -62,9 +60,7 @@ echo "━━━━━━━━━━━━━━━━━━━━━━━━�
   samtools view -bS aln-pe.sam > aln-pe.bam
   #need to add -i flag pe.bamsort -n (sort by name) -- pe.bamis this really needed. Do i need to sort bpe.bamefore huntingpe.bam PE reads
 
-echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
 echo "Plotting coverage"
-echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
   samtools sort -@ $core -o cov.bam aln-pe.bam
   samtools depth cov.bam > corona.cov
   awk '{print $0}' corona.cov > covid.cov
@@ -108,13 +104,13 @@ echo "Genome assembly begun"
 echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
   spades.py -t $core --corona -1 lib_JIT_mapped.1.fastq -2 lib_JIT_mapped.2.fastq -o spades -k 33 #>spades_log.txt 2>&1
  cp ./scriptBase/config/recipe_file_pe_spades .
- rm -rf recipe_file_pe_spades
  
 echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
 echo "Re-assembly using reference"
 echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
   ragout -s sibelia --refine --repeats --threads $core --overwrite -o ragout --solid-scaffolds recipe_file_pe_spades
-
+  rm -rf recipe_file_pe_spades
+  
 echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
 echo "Calculating stats using QUAST"
 echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
@@ -131,14 +127,15 @@ echo "━━━━━━━━━━━━━━━━━━━━━━━━�
 #    Gap2Seq -s ragout/setu_scaffolds.fasta -f ragout/setu_scaffolds.filled.fa -r lib_JIT_mapped.1.fastq,lib_JIT_mapped.2.fastq
 #fi
 
-#KAT plot -- a nice kmer based plot to visualize
-#Only works one read + contig file at a time.
-#kat comp -t $core -o KAT_comp/ $forR1 $revR2 ragout/setu_scaffolds.fa
+echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
+echo "Variant classification"
+echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
+  nextclade run -D ./data/sars-cov-2/ -O nextclade -j $core ragout/setu_scaffolds.fasta
 
-#echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
-#echo "Final mapping to visual check"
-#echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
-#source ./scriptBase/mapping.sh
+echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
+echo "Creating files to visualize"
+echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
+source ./scriptBase/mapping.sh
 
 echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
 echo "Copying final assembly files"
