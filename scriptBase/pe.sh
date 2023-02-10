@@ -106,14 +106,14 @@ echo "━━━━━━━━━━━━━━━━━━━━━━━━�
  cp ./scriptBase/config/recipe_file_pe_spades .
  
 echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
-echo "Re-assembly using reference"
+echo "Scaffolding"
 echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
   ragout -s sibelia --refine --repeats --threads $core --overwrite -o ragout --solid-scaffolds recipe_file_pe_spades
   rm -rf recipe_file_pe_spades
   
-echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
-echo "Calculating stats using QUAST"
-echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
+echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
+echo "Calculating stats"
+echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
   quast -t $core -o assembly_stats ragout/setu_scaffolds.fasta
   
 #Fill the Gaps -- filling the N regions in scaffolded genome
@@ -122,7 +122,7 @@ echo "━━━━━━━━━━━━━━━━━━━━━━━━�
 #if [[ $scaffold == 'yes' ]]
 #  then
 #   echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
-#   echo "Filling the gap"
+#   echo "Filling the gaps"
 #   echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
 #    Gap2Seq -s ragout/setu_scaffolds.fasta -f ragout/setu_scaffolds.filled.fa -r lib_JIT_mapped.1.fastq,lib_JIT_mapped.2.fastq
 #fi
