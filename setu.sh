@@ -58,8 +58,8 @@ then
    if [[ $force == 'on' ]] ; then rm -rf mkdir $out; mkdir $out; else mkdir $out ; fi
    source ./scriptBase/pe.sh
    #Move all to OUTFILE
-   mv spades trimlog ragout final_output assembly_stats $out
-   mv *.{bam,sam,fastq,stats,fq,pdf,txt,cov} $out
+   mv spades ragout final_output assembly_stats nextclade visualization $out
+   mv *.{bam,bai,sam,fastq,stats,fq,pdf,txt,cov} $out
 #PE ends here
 
 elif [[ ${mode,,} == long ]]
