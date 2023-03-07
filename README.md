@@ -13,7 +13,7 @@ Setu (sanskrit सेतु) means bridge. It bridges all the reads to genome.
 ______ _____/  |_ __ __ 
  /  ___// __ \   __\  |  \
  \___ \\  ___/|  | |  |  /
-/____  >\___  >__| |____/ v0.1
+/____  >\___  >__| |____/ v0.2
      \/     \/ bridging the SARS-CoV-2 genome 
 ```
 # Getting Started
@@ -83,7 +83,7 @@ Illustrating procedures for assembly of the SARS-CoV-2 genome.
 
 # News
 
-**June 1, 2021:** Release v0.1, see release notes [here](http://bioinformaticsonline.com/setu)
+**June 1, 2022:** Release v0.2, see release notes [here](http://bioinformaticsonline.com/setu)
 
 # Blogs and Publications
 
@@ -93,17 +93,17 @@ Illustrating procedures for assembly of the SARS-CoV-2 genome.
 
 If you use setu in your research, please cite us as follows:
 
-   Jitendra Narayan¹*, Nityendra Shukla¹, Suyash Agarwal², Neha Srivastava³, Prekshi Garg³, Prachi Srivastava³* **Setu: A Pipeline for the robust Assembling of the SARS-CoV-2 Genome** https://github.com/jnarayan81/setu, 2020. Version 0.1
+   Nityendra Shukla¹, Neha Srivastava³, Prachi Srivastava³*, Jitendra Narayan¹* **Setu: A Pipeline for the robust Assembling of the SARS-CoV-2 Genome** https://github.com/jnarayan81/setu, 2023. Version 0.2
 
 BibTex:
 
 ```
 @misc{setu,
-  author={Jitendra Narayan¹*, Nityendra Shukla¹, Suyash Agarwal², Neha Srivastava³, Prekshi Garg³, Prachi Srivastava³*}
+  author={Nityendra Shukla¹, Neha Srivastava³, Prachi Srivastava³*, Jitendra Narayan¹*}
   title={{Setu}: {A Pipeline for the robust Assembling of the SARS-CoV-2 Genome}},
   howpublished={https://github.com/jnarayan81/setu},
-  note={Version 0.1},
-  year={2021}
+  note={Version 0.2},
+  year={2023}
 }
 ```
 
