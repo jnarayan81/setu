@@ -7,7 +7,10 @@
 
 # Setu
 Setu: A pipeline for robust assembly of the SARS-CoV-2 genome.
-
+```diff
++TO BE NOTED: 
++We are always working to improve SETU so any bug reports, suggestions and general feedback would be highly welcome. 
+```
 Setu (sanskrit सेतु) means bridge. It bridges all the reads to genome.
 ```
 ______ _____/  |_ __ __ 
